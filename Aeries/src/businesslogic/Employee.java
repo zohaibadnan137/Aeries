@@ -32,4 +32,12 @@ public class Employee {
 	{
 		return this.name;
 	}
+	public String getPosistion()
+	{
+		return this.position;
+	}
+	public void setPosition(String position)
+	{
+		this.position = position;
+	}
 }
