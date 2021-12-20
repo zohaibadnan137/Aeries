@@ -1,7 +1,7 @@
 package businesslogic;
 
 import java.util.ArrayList;
-
+//This is Aircraft Class
 public class Aircraft {
 	private AircraftDescription aircraftDescription;
 	private String registrationNumber;
