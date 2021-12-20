@@ -22,7 +22,6 @@ public class EmployeeList {
 	//This method returns 0 if authentication fails, 1 for FDO and 2 for admin
 	public Employee authenticateUser(String email,String password)
 	{
-		int auth=0;
 		for(Employee employee: employees)
 		{
 			if(employee.authenticateUser(email, password))
