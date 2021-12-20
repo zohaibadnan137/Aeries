@@ -7,6 +7,7 @@ public class Aircraft {
 	private String registrationNumber;
 	private String status;
 	private ArrayList<Seat> seats;
+	private EmployeeList employeeList;
 	public Aircraft(AircraftDescription aircraftDescription, String registrationNumber, String status)
 	{
 		seats = null;
