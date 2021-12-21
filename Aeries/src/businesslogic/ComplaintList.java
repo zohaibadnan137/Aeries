@@ -2,6 +2,7 @@ package businesslogic;
 
 import java.util.ArrayList;
 
+
 public class ComplaintList {
 	private ArrayList<Complaint> complaints;
 	
