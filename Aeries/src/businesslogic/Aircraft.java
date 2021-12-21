@@ -7,6 +7,8 @@ public class Aircraft {
 	private String registrationNumber;
 	private String status;
 	private ArrayList<Seat> seats;
+	private EmployeeList employeeList;
+	private ComplaintList complaintList;
 	public Aircraft(AircraftDescription aircraftDescription, String registrationNumber, String status)
 	{
 		seats = null;
@@ -21,5 +23,13 @@ public class Aircraft {
 			this.seats = new ArrayList<Seat>();
 		}
 		seats.add(seat);
+	}
+	public Employee authenticateUser(String email,String password)
+	{
+		return employeeList.authenticateUser(email, password);
+	}
+	public void fileComplaint(int complaintID, String description, Passenger passenger)
+	{
+		complaintList.addComplaint(complaintID, description, passenger);
 	}
 }
