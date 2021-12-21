@@ -9,12 +9,13 @@ public class ComplaintList {
 	public ComplaintList() {
 		complaints = null;
 	}
-	public void addComplaint(Complaint complaint)
-	{
-		this.complaints.add(complaint);
-	}
+
 	public void addComplaint(int complaintID, String description,Passenger passenger)
 	{
+		if(this.complaints == null)
+		{
+			this.complaints = new ArrayList<Complaint>();
+		}
 		this.complaints.add(new Complaint(complaintID, description, passenger));
 	}
 	public Complaint getComplaint(int ID)
