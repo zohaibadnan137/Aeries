@@ -84,4 +84,8 @@ public class Airline {
 	{
 		return flightSchedule.addFlight(flightPlan);
 	}
+	public String checkFlightStatus(int flightNumber)
+	{
+		
+	}
 }
