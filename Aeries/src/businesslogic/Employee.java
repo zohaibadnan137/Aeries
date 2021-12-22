@@ -19,6 +19,7 @@ public class Employee {
 		this.gender = gender;
 		this.email = email;
 		this.position=position;
+		this.password = password;
 	}
 	public boolean authenticateUser(String email, String password)
 	{
