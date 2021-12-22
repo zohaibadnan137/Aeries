@@ -54,6 +54,6 @@ public class FlightSchedule {
 	public boolean bookTicket(Flight flight,ArrayList<Passenger> passengers)
 	{
 		Flight flightToBook = this.getFlight(flight.getPlan().getFlightNumber());
-		
+		return false;
 	}
 }
