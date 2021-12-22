@@ -88,5 +88,13 @@ public class Airline {
 	{
 		return flightSchedule.getFlightStatus(flightNumber);
 	}
+	public ArrayList<Flight> searchFlight(Airport origin, Airport destination)
+	{
+		return flightSchedule.searchFlight(origin, destination);
+	}
+	public boolean bookTicket(Flight flight,ArrayList<Passenger> passengers)
+	{
+		return 
+	}
 	
 }

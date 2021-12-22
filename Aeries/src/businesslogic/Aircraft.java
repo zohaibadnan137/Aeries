@@ -11,7 +11,7 @@ public class Aircraft {
 	
 	public Aircraft(AircraftDescription aircraftDescription, String registrationNumber, String status)
 	{
-		seats = null;
+		seats = new ArrayList<Seat>();
 		this.aircraftDescription = aircraftDescription;
 		this.registrationNumber = registrationNumber;
 		this.status = status;
@@ -48,5 +48,16 @@ public class Aircraft {
 		}
 		seats.add(seat);
 	}
-	
+	public ArrayList<Seat> getAvailableSeats()
+	{
+		ArrayList<Seat> availableSeats = new ArrayList<Seat>();
+		for(Seat seat : this.seats)
+		{
+			if(seat.getStatus().equals("Available"))
+			{
+				availableSeats.add(seat);
+			}
+		}
+		return availableSeats;
+	}
 }

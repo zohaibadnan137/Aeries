@@ -39,4 +39,21 @@ public class FlightSchedule {
 		Flight f = this.getFlight(flightNumber);
 		return f.getStatus();
 	}
+	public ArrayList<Flight> searchFlight(Airport origin, Airport desination)
+	{
+		ArrayList<Flight> searchResults = new ArrayList<Flight>();
+		for(Flight flight: this.flights)
+		{
+			if(flight.getPlan().getOrigin().getCode().equals(origin.getCode()) && flight.getPlan().getDestination().getCode().equals(desination.getCode()))
+			{
+				searchResults.add(flight);
+			}
+		}
+			return searchResults;
+	}
+	public boolean bookTicket(Flight flight,ArrayList<Passenger> passengers)
+	{
+		Flight flightToBook = this.getFlight(flight.getPlan().getFlightNumber());
+		
+	}
 }

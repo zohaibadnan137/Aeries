@@ -22,7 +22,7 @@ public class Employee {
 	}
 	public boolean authenticateUser(String email, String password)
 	{
-		if(this.email==email && this.password==password)
+		if(this.email.equals(email) && this.password.equals(password))
 		{
 			return true;
 		}

@@ -20,7 +20,7 @@ public class Flight {
 		this.status = "On Time";
 		this.departure = plan.getPlannedDepartureTime();
 		this.arrival = plan.getPlannedArrivalTime();
-		this.tickets = null;
+		this.tickets = new ArrayList<Ticket>();
 		this.boardings = null;
 	}
 	public void setDepartureTime(int year, int month, int day, int hour, int minute, int seconds)
