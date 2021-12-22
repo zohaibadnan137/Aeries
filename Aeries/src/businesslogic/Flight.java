@@ -55,4 +55,23 @@ public class Flight {
 		}
 		boardings.add(pass);
 	}
+	public FlightPlan getPlan() {
+		return plan;
+	}
+	public void setPlan(FlightPlan plan) {
+		this.plan = plan;
+	}
+	public ArrayList<Ticket> getTickets() {
+		return tickets;
+	}
+	public void setTickets(ArrayList<Ticket> tickets) {
+		this.tickets = tickets;
+	}
+	public ArrayList<BoardingPass> getBoardings() {
+		return boardings;
+	}
+	public void setBoardings(ArrayList<BoardingPass> boardings) {
+		this.boardings = boardings;
+	}
+	
 }
