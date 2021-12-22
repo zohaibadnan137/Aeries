@@ -1,6 +1,7 @@
 package businesslogic;
 
 import java.util.ArrayList;
+import java.util.Date;
 //This is Aircraft Class
 public class Aircraft {
 	private AircraftDescription aircraftDescription;
@@ -14,6 +15,30 @@ public class Aircraft {
 		this.aircraftDescription = aircraftDescription;
 		this.registrationNumber = registrationNumber;
 		this.status = status;
+	}
+	public AircraftDescription getAircraftDescription() {
+		return aircraftDescription;
+	}
+	public void setAircraftDescription(AircraftDescription aircraftDescription) {
+		this.aircraftDescription = aircraftDescription;
+	}
+	public String getRegistrationNumber() {
+		return registrationNumber;
+	}
+	public void setRegistrationNumber(String registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public ArrayList<Seat> getSeats() {
+		return seats;
+	}
+	public void setSeats(ArrayList<Seat> seats) {
+		this.seats = seats;
 	}
 	public void addSeat(Seat seat)
 	{

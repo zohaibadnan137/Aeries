@@ -23,4 +23,22 @@ public class FlightPlan {
 	public DateAndTime getPlannedArrivalTime() {
 		return plannedArrival;
 	}
+	public String getFlightNumber() {
+		return flightNumber;
+	}
+	public void setFlightNumber(String flightNumber) {
+		this.flightNumber = flightNumber;
+	}
+	public Airport getOrigin() {
+		return origin;
+	}
+	public void setOrigin(Airport origin) {
+		this.origin = origin;
+	}
+	public Airport getDestination() {
+		return destination;
+	}
+	public void setDestination(Airport destination) {
+		this.destination = destination;
+	}
 }

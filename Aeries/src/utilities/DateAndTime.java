@@ -1,13 +1,31 @@
 package utilities;
-import java.time.format.DateTimeFormatter; 
+import java.time.format.DateTimeFormatter;
+
+import javax.persistence.*;
 
 import java.time.LocalDateTime;
 import java.time.Month;
 
+@Entity
+@Table(name="DateAndTime")
 public class DateAndTime{
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
 	private LocalDateTime dateObj;
 	private String formattedDate;
-	int year;int month; int day; int hour; int minute; int seconds;
+	@Column(name="year")
+	int year;
+	@Column(name="month")
+	int month;
+	@Column(name="day")
+	int day;
+	@Column(name="hour")
+	int hour;
+	@Column(name="minute")
+	int minute; 
+	@Column(name="seconds")
+	int seconds;
 	public DateAndTime(int year, int month, int day, int hour, int minute, int seconds) {
 
 		this.year=year;
