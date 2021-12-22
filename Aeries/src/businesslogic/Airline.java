@@ -1,6 +1,7 @@
 package businesslogic;
 
-
+import utilities.DateAndTime;
+import java.util.*;
 public class Airline {
 	private String name;
 	private EmployeeList employeeList;
@@ -8,14 +9,7 @@ public class Airline {
 	private FlightPlanCatalog flightPlanCatalog;
 	private FlightSchedule flightSchedule;
 	private Fleet fleet;
-	public Airline() {
-		this.name = "";
-		this.employeeList = null;
-		this.complaintList = null;
-		this.flightPlanCatalog = null;
-		this.flightSchedule = null;
-		this.fleet = null;
-	}
+
 	public Airline(String name,EmployeeList employeeList,ComplaintList complaintList,FlightPlanCatalog flightPlanCatalog, FlightSchedule flightSchedule,Fleet fleet) {
 		this.name = name;
 		this.employeeList = employeeList;
@@ -70,5 +64,24 @@ public class Airline {
 	{
 		return this.complaintList;
 	}
-	public void addFlight()
+	public ArrayList<FlightPlan> getAllFlightPlans()
+	{
+		return flightPlanCatalog.getFlightPlans();
+	}
+	public ArrayList<Flight> getAllScheduledFlights()
+	{
+		return flightSchedule.getFlights();
+	}
+	public FlightPlan addFlightPlan(String flightNumber, DateAndTime plannedDeparture, DateAndTime plannedArrival,Airport origin, Airport destination)
+	{
+		if(flightPlanCatalog==null)
+		{
+			flightPlanCatalog=new FlightPlanCatalog();
+		}
+		return flightPlanCatalog.addFlightPlan(flightNumber, plannedDeparture, plannedArrival, origin, destination);
+	}
+	public Flight addNewFlight(FlightPlan flightPlan)
+	{
+		return flightSchedule.addFlight(flightPlan);
+	}
 }
