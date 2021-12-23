@@ -73,6 +73,16 @@ public class Flight {
 	public void setBoardings(ArrayList<BoardingPass> boardings) {
 		this.boardings = boardings;
 	}
-	public flight
+	public boolean verifyBoarding(int boardingNumber)
+	{
+		for(BoardingPass b: this.boardings)
+		{
+			if(b.getNumber() == boardingNumber)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 	
 }

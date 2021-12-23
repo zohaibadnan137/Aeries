@@ -51,11 +51,22 @@ public class FlightSchedule {
 		}
 			return searchResults;
 	}
-	public boolean bookTicket(Flight flight,ArrayList<Passenger> passengers)
+	public boolean verifyBoarding(int boardingNumber)
 	{
-		Flight flightToBook = this.getFlight(flight.getPlan().getFlightNumber());
-		Ticket newTicket = new Ticket((int) (Math.random() * (1000 - 1)) + 1,)
-		
-		flightToBook.
+		for(Flight f: this.flights)
+		{
+			if(f.verifyBoarding(boardingNumber))
+			{
+				return true;
+			}
+		}
+		return false;
 	}
+//	public boolean bookTicket(Flight flight,ArrayList<Passenger> passengers)
+//	{
+//		Flight flightToBook = this.getFlight(flight.getPlan().getFlightNumber());
+//		Ticket newTicket = new Ticket((int) (Math.random() * (1000 - 1)) + 1,)
+//		
+//		flightToBook.
+//	}
 }

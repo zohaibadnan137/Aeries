@@ -12,4 +12,29 @@ public class BoardingPass {
 		this.assignedPassenger = assignedPassenger;
 		this.associatedSeat = associatedSeat;
 	}
+	public int getNumber() {
+		return number;
+	}
+	public void setNumber(int number) {
+		this.number = number;
+	}
+	public Ticket getAssociatedTicket() {
+		return associatedTicket;
+	}
+	public void setAssociatedTicket(Ticket associatedTicket) {
+		this.associatedTicket = associatedTicket;
+	}
+	public Passenger getAssignedPassenger() {
+		return assignedPassenger;
+	}
+	public void setAssignedPassenger(Passenger assignedPassenger) {
+		this.assignedPassenger = assignedPassenger;
+	}
+	public Seat getAssociatedSeat() {
+		return associatedSeat;
+	}
+	public void setAssociatedSeat(Seat associatedSeat) {
+		this.associatedSeat = associatedSeat;
+	}
+	
 }

@@ -97,9 +97,12 @@ public class Airline {
 	{
 		return flightSchedule.searchFlight(origin, destination);
 	}
-	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers)
+//	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers)
+//	{
+//		
+//	}
+	public boolean verifyBoarding(int boardingNumber)
 	{
-		
+		return this.flightSchedule.verifyBoarding(boardingNumber);
 	}
-	
 }
