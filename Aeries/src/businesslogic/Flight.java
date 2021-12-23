@@ -73,5 +73,6 @@ public class Flight {
 	public void setBoardings(ArrayList<BoardingPass> boardings) {
 		this.boardings = boardings;
 	}
+	public flight
 	
 }

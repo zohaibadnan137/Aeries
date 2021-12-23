@@ -54,6 +54,8 @@ public class FlightSchedule {
 	public boolean bookTicket(Flight flight,ArrayList<Passenger> passengers)
 	{
 		Flight flightToBook = this.getFlight(flight.getPlan().getFlightNumber());
-		return false;
+		Ticket newTicket = new Ticket((int) (Math.random() * (1000 - 1)) + 1,)
+		
+		flightToBook.
 	}
 }

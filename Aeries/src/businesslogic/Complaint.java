@@ -4,12 +4,12 @@ public class Complaint {
 	
 	private int complaintID;
 	private String description;
-	public Passenger passenger;
-	public Complaint(int complaintID, String description,Passenger passenger)
+	public BoardingPass boardingPass;
+	public Complaint(int complaintID, String description,BoardingPass boardingPass)
 	{
 		this.complaintID = complaintID;
 		this.description = description;
-		this.passenger = passenger;
+		this.boardingPass = boardingPass;
 	}
 	public int getComplaintID()
 	{
@@ -23,8 +23,8 @@ public class Complaint {
 	{
 		return this.description;
 	}
-	public Passenger getPassenger()
+	public Passenger getBoardingPass()
 	{
-		return this.passenger;
+		return this.boardingPass;
 	}
 }

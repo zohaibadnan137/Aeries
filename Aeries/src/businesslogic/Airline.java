@@ -56,9 +56,9 @@ public class Airline {
 	{
 		return employeeList.authenticateUser(email, password);
 	}
-	public void fileComplaint(int complaintID, String description, Passenger passenger)
+	public void fileComplaint(int complaintID, String description, BoardingPass boardingPass)
 	{
-		complaintList.addComplaint(complaintID, description, passenger);
+		complaintList.addComplaint(complaintID, description, boardingPass);
 	}
 	public ComplaintList getComplaintList()
 	{
@@ -97,9 +97,9 @@ public class Airline {
 	{
 		return flightSchedule.searchFlight(origin, destination);
 	}
-	public boolean bookTicket(Flight flight,ArrayList<Passenger> passengers)
+	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers)
 	{
-		return false;
+		
 	}
 	
 }
