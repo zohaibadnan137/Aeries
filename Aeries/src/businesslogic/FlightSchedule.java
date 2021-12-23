@@ -2,6 +2,8 @@ package businesslogic;
 
 import java.util.*;
 
+import utilities.DateAndTime;
+
 public class FlightSchedule {
 	private ArrayList<Flight> flights;
 	
@@ -62,11 +64,18 @@ public class FlightSchedule {
 		}
 		return false;
 	}
-//	public boolean bookTicket(Flight flight,ArrayList<Passenger> passengers)
-//	{
-//		Flight flightToBook = this.getFlight(flight.getPlan().getFlightNumber());
-//		Ticket newTicket = new Ticket((int) (Math.random() * (1000 - 1)) + 1,)
-//		
-//		flightToBook.
-//	}
+	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers,int amountPaid)
+	{
+		Flight flightToBook = this.getFlight(flight.getPlan().getFlightNumber());
+		if(flightToBook==null)
+		{
+			return null;
+		}
+		Date d = new Date();
+		DateAndTime currentDate = new DateAndTime(d.getYear(),d.getMonth(),d.getDay(),d.getHours(),d.getMinutes(),d.getSeconds());
+		Ticket newTicket = new Ticket((int) (Math.random() * (1000 - 1)) + 1,amountPaid,currentDate);
+		flightToBook.addTicket(newTicket);
+		return newTicket;
+		
+	}
 }

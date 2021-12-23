@@ -97,10 +97,10 @@ public class Airline {
 	{
 		return flightSchedule.searchFlight(origin, destination);
 	}
-//	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers)
-//	{
-//		
-//	}
+	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers,int amountPaid)
+	{
+		return flightSchedule.bookTicket(flight, passengers, amountPaid);
+	}
 	public boolean verifyBoarding(int boardingNumber)
 	{
 		return this.flightSchedule.verifyBoarding(boardingNumber);
