@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: #D90429;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: #D90429;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.StartEventHandler">
    <children>
       <AnchorPane layoutY="350.0" prefHeight="150.0" prefWidth="650.0" style="-fx-background-color: #FFFFFF;" />
       <GridPane layoutX="75.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0">
@@ -34,7 +34,7 @@
                   <Image url="@../../images/logo.png" />
                </image>
             </ImageView>
-            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #D90429; -fx-background-radius: 10;" text="START" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#start" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="START" textFill="#8d99ae" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>

@@ -23,7 +23,7 @@ public class Complaint {
 	{
 		return this.description;
 	}
-	public Passenger getBoardingPass()
+	public BoardingPass getBoardingPass()
 	{
 		return this.boardingPass;
 	}
