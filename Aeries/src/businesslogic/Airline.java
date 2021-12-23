@@ -80,6 +80,11 @@ public class Airline {
 		}
 		return flightPlanCatalog.addFlightPlan(flightNumber, plannedDeparture, plannedArrival, origin, destination);
 	}
+	public Aircraft addAircraft(int registrationNumber, String status, AircraftDescription description)
+	{
+		return this.fleet.addAircraft(registrationNumber,status,description);
+	}
+	
 	//Get flightPlan with a flightNumber
 	public FlightPlan getFlightPlan(String flightNumber)
 	{
