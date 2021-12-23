@@ -101,8 +101,13 @@ public class Airline {
 	{
 		return flightSchedule.bookTicket(flight, passengers, amountPaid);
 	}
+	public BoardingPass boardPassenger(Ticket ticket, Passenger passenger, Seat seat,Flight flight)
+	{
+		return flightSchedule.boardPassenger(ticket, passenger, seat, flight);
+	}
 	public boolean verifyBoarding(int boardingNumber)
 	{
 		return this.flightSchedule.verifyBoarding(boardingNumber);
 	}
+	
 }

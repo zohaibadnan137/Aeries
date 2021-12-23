@@ -78,4 +78,15 @@ public class FlightSchedule {
 		return newTicket;
 		
 	}
+	public BoardingPass boardPassenger(Ticket ticket, Passenger passenger, Seat seat,Flight flight)
+	{
+		Flight toBoardOn = this.getFlight(flight.getPlan().getFlightNumber());
+		if(toBoardOn==null)
+		{
+			return null;
+		}
+		BoardingPass newBoarding= new BoardingPass((int) (Math.random() * (1000 - 1)) + 1, ticket, passenger, seat);
+		toBoardOn.addBoardingPass(newBoarding);
+		return newBoarding;
+	}
 }
