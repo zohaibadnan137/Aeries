@@ -90,9 +90,9 @@ public class Airline {
 	{
 		return this.flightPlanCatalog.getFlightPlan(flightNumber);
 	}
-	public Flight addNewFlight(FlightPlan flightPlan)
+	public Flight addNewFlight(FlightPlan flightPlan,int price)
 	{
-		return flightSchedule.addFlight(flightPlan);
+		return flightSchedule.addFlight(flightPlan, price);
 	}
 	public String checkFlightStatus(String flightNumber)
 	{

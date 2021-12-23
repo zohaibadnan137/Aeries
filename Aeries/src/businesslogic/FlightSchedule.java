@@ -11,13 +11,13 @@ public class FlightSchedule {
 	{
 		flights = null;
 	}
-	public Flight addFlight(FlightPlan plan)
+	public Flight addFlight(FlightPlan plan,int price)
 	{
 		if(flights == null)
 		{
 			flights = new ArrayList<Flight>();
 		}
-		Flight newFlight = new Flight(plan);
+		Flight newFlight = new Flight(plan,price);
 		flights.add(newFlight);
 		return newFlight;
 	}
