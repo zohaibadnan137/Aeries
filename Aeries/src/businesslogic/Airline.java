@@ -80,6 +80,10 @@ public class Airline {
 		}
 		return flightPlanCatalog.addFlightPlan(flightNumber, plannedDeparture, plannedArrival, origin, destination);
 	}
+	public FlightPlan getFlightPlan(String flightNumber)
+	{
+		return this.flightPlanCatalog.getFlightPlan(flightNumber);
+	}
 	public Flight addNewFlight(FlightPlan flightPlan)
 	{
 		return flightSchedule.addFlight(flightPlan);

@@ -26,5 +26,15 @@ public class FlightPlanCatalog {
 	public ArrayList<FlightPlan> getFlightPlans() {
 		return flightPlans;
 	}
-	
+	public FlightPlan getFlightPlan(String flightNumber)
+	{
+		for(FlightPlan flightPlan: flightPlans)
+		{
+			if(flightPlan.getFlightNumber().equals(flightNumber))
+			{
+				return flightPlan;
+			}
+		}
+		return null;
+	}
 }
