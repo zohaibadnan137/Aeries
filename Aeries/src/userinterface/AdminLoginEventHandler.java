@@ -7,7 +7,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-public class LoginEventHandler {
+public class AdminLoginEventHandler {
 	
 	private String username;
 	private String password;
@@ -33,7 +33,7 @@ public class LoginEventHandler {
 		//success = Airline.authenticate(usernameInput.getText(), passwordInput.getText());
 		if(success)
 		{
-			// Call main menu
+			// Check whether the employee has admin privileges
 		}
 		else
 		{
