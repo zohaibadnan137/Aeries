@@ -127,9 +127,9 @@ public class Airline {
 	{
 		return flightSchedule.bookTicket(flight, passengers, amountPaid);
 	}
-	public void cancelTicket()
+	public void cancelTicket(int ticketNumber)
 	{
-		
+		this.flightSchedule.cancelTicket(ticketNumber);
 	}
 	public BoardingPass boardPassenger(Ticket ticket, Passenger passenger, Seat seat,Flight flight)
 	{

@@ -6,6 +6,8 @@ import javax.persistence.*;
 @Table(name="FlightPlan")
 public class FlightPlan {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
 	@Column(name="flightNumber")
 	private String flightNumber; 
 	@OneToOne(cascade= CascadeType.ALL)

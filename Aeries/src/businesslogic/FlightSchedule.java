@@ -41,6 +41,20 @@ public class FlightSchedule {
 		}
 		return retFlight;
 	}
+	public void cancelTicket(int ticketNumber)
+	{
+		for(Flight flight: flights)
+		{
+			ArrayList<Ticket> tickets = flight.getTickets();
+			for(Ticket ticket : tickets)
+			{
+				if(ticket.getNumber()==ticketNumber)
+				{
+					ticket.cancelTicket();
+				}
+			}
+		}
+	}
 	public String getFlightStatus(String flightNumber)
 	{
 		Flight f = this.getFlight(flightNumber);
