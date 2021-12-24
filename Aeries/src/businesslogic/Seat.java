@@ -5,14 +5,14 @@ public class Seat {
 	private int seatNumber;
 	private String seatType;
 	private String seatLocation;
-	private int price;
+	private int priceMultiplier;
 	
-	public Seat(int seatNumber, String seatType, String seatLocation,int price) {
+	public Seat(int seatNumber, String seatType, String seatLocation,int priceMultiplier) {
 		this.seatNumber = seatNumber;
 		this.seatType = seatType;
 		this.seatLocation = seatLocation;
 		this.status = "Available";
-		this.price = price;
+		this.priceMultiplier = priceMultiplier;
 	}
 	
 	public String getType() {
@@ -25,7 +25,7 @@ public class Seat {
 		return "Seat Number: "+this.seatNumber+"\n"
 				+"Seat Type: "+this.seatType+"\n"
 				+"Seat Location: "+this.seatLocation+"\n"
-				+"price: $"+this.price+"\n\n";
+				+"\n";
 		
 	}
 	public String getStatus() {
@@ -36,5 +36,13 @@ public class Seat {
 	}
 	public void unBookSeat() {
 		this.status = "Available";
+	}
+	public int getPriceMultiplier()
+	{
+		return this.priceMultiplier;
+	}
+	public void setPriceMultiplier(int multiplier)
+	{
+		this.priceMultiplier = multiplier;
 	}
 }

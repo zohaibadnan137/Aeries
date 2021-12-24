@@ -12,9 +12,9 @@ public class Flight {
 	private String status;
 	private ArrayList<Ticket> tickets;
 	private ArrayList<BoardingPass> boardings;
-
+	int price;
 	
-	public Flight(FlightPlan plan)
+	public Flight(FlightPlan plan,int price)
 	{
 		this.plan = plan;
 		this.status = "On Time";
@@ -22,6 +22,7 @@ public class Flight {
 		this.arrival = plan.getPlannedArrivalTime();
 		this.tickets = new ArrayList<Ticket>();
 		this.boardings = null;
+		this.price = price;
 	}
 	public void setDepartureTime(int year, int month, int day, int hour, int minute, int seconds)
 	{
@@ -34,6 +35,14 @@ public class Flight {
 	public String getStatus()
 	{
 		return this.status;
+	}
+	public void setPrice(int price)
+	{
+		this.price = price;
+	}
+	public int getPrice()
+	{
+		return this.price;
 	}
 	public void setStatus(String status)
 	{

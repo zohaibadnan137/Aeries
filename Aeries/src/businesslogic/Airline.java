@@ -80,14 +80,19 @@ public class Airline {
 		}
 		return flightPlanCatalog.addFlightPlan(flightNumber, plannedDeparture, plannedArrival, origin, destination);
 	}
+	public Aircraft addAircraft(int registrationNumber, String status, AircraftDescription description)
+	{
+		return this.fleet.addAircraft(registrationNumber,status,description);
+	}
+	
 	//Get flightPlan with a flightNumber
 	public FlightPlan getFlightPlan(String flightNumber)
 	{
 		return this.flightPlanCatalog.getFlightPlan(flightNumber);
 	}
-	public Flight addNewFlight(FlightPlan flightPlan)
+	public Flight addNewFlight(FlightPlan flightPlan,int price)
 	{
-		return flightSchedule.addFlight(flightPlan);
+		return flightSchedule.addFlight(flightPlan, price);
 	}
 	public String checkFlightStatus(String flightNumber)
 	{
@@ -97,12 +102,17 @@ public class Airline {
 	{
 		return flightSchedule.searchFlight(origin, destination);
 	}
-//	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers)
-//	{
-//		
-//	}
+	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers,int amountPaid)
+	{
+		return flightSchedule.bookTicket(flight, passengers, amountPaid);
+	}
+	public BoardingPass boardPassenger(Ticket ticket, Passenger passenger, Seat seat,Flight flight)
+	{
+		return flightSchedule.boardPassenger(ticket, passenger, seat, flight);
+	}
 	public boolean verifyBoarding(int boardingNumber)
 	{
 		return this.flightSchedule.verifyBoarding(boardingNumber);
 	}
+	
 }
