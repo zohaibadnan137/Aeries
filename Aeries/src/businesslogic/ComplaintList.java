@@ -20,6 +20,10 @@ public class ComplaintList {
 		}
 		this.complaints.add(new Complaint(IdDispenser.getID(), description, boardingPass));
 	}
+	public ArrayList<Complaint> getComplaints()
+	{
+		return this.complaints;
+	}
 	public Complaint getComplaint(int ID)
 	{
 		for(Complaint complaint : complaints)

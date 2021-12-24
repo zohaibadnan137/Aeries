@@ -9,28 +9,23 @@ public class DBHandler implements PersistenceHandler {
 	private Session session;
 	public DBHandler()
 	{
-		try {
-			this.session = HibernateUtil.getSessionFactory().openSession();
-			this.transaction = session.beginTransaction();
-		}catch(Exception e) {
-			if (this.transaction != null) {
-				this.transaction.rollback();
-			}
-			e.printStackTrace();
-		}
 	}
 	
 	@Override
 	public boolean save(Object object)
 	{
-		try {
+		Transaction transaction = null;
+		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+			// start a transaction
+			transaction = session.beginTransaction();
+			// save the student object
 			session.save(object);
+			// commit transaction
 			transaction.commit();
 			return true;
-		}catch(Exception e)
-		{
-			if (this.transaction != null) {
-				this.transaction.rollback();
+		} catch (Exception e) {
+			if (transaction != null) {
+				transaction.rollback();
 			}
 			e.printStackTrace();
 			return false;

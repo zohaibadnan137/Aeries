@@ -14,7 +14,6 @@ public class Ticket {
 	private int amountPaid;
 	@OneToOne(cascade = CascadeType.ALL)
 	private DateAndTime date;
-	@OneToMany(cascade = CascadeType.ALL)
 	ArrayList<Passenger> passengers;
 	@Column(name="status")
 	String status;

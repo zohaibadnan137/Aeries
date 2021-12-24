@@ -1,12 +1,20 @@
 package businesslogic;
 
 import utilities.DateAndTime;
-
+import javax.persistence.*;
+@Entity
+@Table(name="FlightPlan")
 public class FlightPlan {
+	@Id
+	@Column(name="flightNumber")
 	private String flightNumber; 
+	@OneToOne(cascade= CascadeType.ALL)
 	private DateAndTime plannedDeparture; 
+	@OneToOne(cascade= CascadeType.ALL)
 	private DateAndTime plannedArrival;
+	@OneToOne(cascade= CascadeType.ALL)
 	private Airport origin;
+	@OneToOne(cascade= CascadeType.ALL)
 	private Airport destination;
 
 	public FlightPlan(String flightNumber, DateAndTime plannedDeparture, DateAndTime plannedArrival,Airport origin, Airport destination)

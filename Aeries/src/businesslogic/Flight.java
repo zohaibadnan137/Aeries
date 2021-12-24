@@ -21,12 +21,11 @@ public class Flight {
 	private DateAndTime arrival;
 	@Column(name="status")
 	private String status;
-	@OneToMany(cascade = CascadeType.ALL)
 	private ArrayList<Ticket> tickets;
-	@OneToMany(cascade = CascadeType.ALL)
 	private ArrayList<BoardingPass> boardings;
 	@Column(name="price")
 	int price;
+	@OneToOne(cascade = CascadeType.ALL)
 	Aircraft aircraft;
 	public Flight(FlightPlan plan,int price,Aircraft aircraft)
 	{

@@ -14,7 +14,6 @@ public class Aircraft {
 	private String registrationNumber;
 	@Column(name="status")
 	private String status;
-	@OneToMany(cascade = CascadeType.ALL)
 	private ArrayList<Seat> seats;
 	
 	public Aircraft(AircraftDescription aircraftDescription, String registrationNumber, String status)

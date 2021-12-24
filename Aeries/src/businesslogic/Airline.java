@@ -21,6 +21,7 @@ public class Airline {
 		this.flightSchedule = flightSchedule;
 		this.fleet = fleet;
 	}
+
 	public String getName() {
 		return name;
 	}
@@ -125,6 +126,10 @@ public class Airline {
 	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers,int amountPaid) throws FileNotFoundException, IOException
 	{
 		return flightSchedule.bookTicket(flight, passengers, amountPaid);
+	}
+	public void cancelTicket()
+	{
+		
 	}
 	public BoardingPass boardPassenger(Ticket ticket, Passenger passenger, Seat seat,Flight flight)
 	{
