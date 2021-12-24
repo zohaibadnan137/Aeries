@@ -38,6 +38,11 @@ public class Main {
 			// start a transaction
 			transaction = session.beginTransaction();
 			// save the student object
+			session.save(d1);
+			session.save(d2);
+		
+			session.save(Sc);
+			session.save(Des);
 			session.save(plan);
 			// commit transaction
 			transaction.commit();

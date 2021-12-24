@@ -24,11 +24,11 @@ public class HibernateUtil {
 				settings.put(Environment.PASS, "admin");
 				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 
-				settings.put(Environment.SHOW_SQL, "true");
+				settings.put(Environment.SHOW_SQL, "false");
 
 				settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
-				settings.put(Environment.HBM2DDL_AUTO, "create-drop");
+				settings.put(Environment.HBM2DDL_AUTO, "update");
 
 				configuration.setProperties(settings);
 				
@@ -37,7 +37,15 @@ public class HibernateUtil {
 				configuration.addAnnotatedClass(Aircraft.class);
 				configuration.addAnnotatedClass(Flight.class);
 				configuration.addAnnotatedClass(DateAndTime.class);
-
+				configuration.addAnnotatedClass(AircraftDescription.class);
+				configuration.addAnnotatedClass(Seat.class);
+				configuration.addAnnotatedClass(FlightPlan.class);
+				configuration.addAnnotatedClass(Flight.class);
+				configuration.addAnnotatedClass(Employee.class);
+				configuration.addAnnotatedClass(Complaint.class);
+				configuration.addAnnotatedClass(BoardingPass.class);
+				configuration.addAnnotatedClass(Airport.class);
+				configuration.addAnnotatedClass(Ticket.class);
 
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 						.applySettings(configuration.getProperties()).build();

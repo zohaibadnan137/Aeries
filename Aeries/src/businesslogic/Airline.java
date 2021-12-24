@@ -5,6 +5,7 @@ import utilities.DateAndTime;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
+import Threads.*;
 public class Airline {
 	private String name;
 	private EmployeeList employeeList;
@@ -100,11 +101,8 @@ public class Airline {
 	}
 	public void unBookAircraft(Aircraft aircraft)
 	{
-		ArrayList<Seat> allSeats = aircraft.getSeats();
-		for(Seat seat : allSeats)
-		{
-			seat.unBookSeat();
-		}
+		UnBookAircraftThread thread= new UnBookAircraftThread(aircraft);
+		thread.start();
 	}
 	//Get flightPlan with a flightNumber
 	public FlightPlan getFlightPlan(String flightNumber)
@@ -129,7 +127,8 @@ public class Airline {
 	}
 	public void cancelTicket(int ticketNumber)
 	{
-		this.flightSchedule.cancelTicket(ticketNumber);
+		Thread thread = new CancelTicketThread(flightSchedule, ticketNumber);
+		thread.start();
 	} 
 	public void updateTicket(int ticketNumber, Passenger passenger)
 	{
