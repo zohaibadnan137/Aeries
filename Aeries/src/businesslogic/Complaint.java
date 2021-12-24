@@ -1,9 +1,14 @@
 package businesslogic;
-
+import javax.persistence.*;
+@Entity
+@Table(name="Complaint")
 public class Complaint {
-	
+	@Id
+	@Column(name="complaintID")
 	private int complaintID;
+	@Column(name="Description")
 	private String description;
+	@OneToOne(cascade = CascadeType.ALL)
 	public BoardingPass boardingPass;
 	public Complaint(int complaintID, String description,BoardingPass boardingPass)
 	{

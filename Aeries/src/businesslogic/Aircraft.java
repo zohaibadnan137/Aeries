@@ -1,12 +1,20 @@
 package businesslogic;
 
 import java.util.ArrayList;
+import javax.persistence.*;
 
 //This is Aircraft Class
+@Entity
+@Table(name="Aircraft")
 public class Aircraft {
+	@OneToOne(cascade = CascadeType.ALL)
 	private AircraftDescription aircraftDescription;
+	@Id
+	@Column(name="registrationNumber")
 	private String registrationNumber;
+	@Column(name="status")
 	private String status;
+	@OneToMany(cascade = CascadeType.ALL)
 	private ArrayList<Seat> seats;
 	
 	public Aircraft(AircraftDescription aircraftDescription, String registrationNumber, String status)

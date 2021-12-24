@@ -4,23 +4,21 @@ import java.util.*;
 import utilities.DateAndTime;
 import javax.persistence.*;
 
-@Entity
-@Table(name="FlightSchedule")
+
 public class FlightSchedule {
-	@OneToMany(cascade = CascadeType.ALL)
 	private ArrayList<Flight> flights;
 	
 	public FlightSchedule()
 	{
 		flights = null;
 	}
-	public Flight addFlight(FlightPlan plan,int price)
+	public Flight addFlight(FlightPlan plan,int price,Aircraft aircraft)
 	{
 		if(flights == null)
 		{
 			flights = new ArrayList<Flight>();
 		}
-		Flight newFlight = new Flight(plan,price);
+		Flight newFlight = new Flight(plan,price,aircraft);
 		flights.add(newFlight);
 		return newFlight;
 	}

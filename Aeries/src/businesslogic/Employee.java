@@ -1,14 +1,24 @@
 package businesslogic;
 
 import utilities.*;
-
+import javax.persistence.*;
+@Entity
+@Table(name="Employee")
 public class Employee {
+	@Id
+	@Column(name="id")
 	private int id;
+	@Column(name="name")
 	private String name;
+	@OneToOne(cascade = CascadeType.ALL)
 	private DateAndTime dateOfBirth;
+	@Column(name="gender")
 	private String gender;
-	private String email; 
+	@Column(name="email")
+	private String email;
+	@Column(name="password")
 	private String password;
+	@Column(name="position")
 	private String position;
 	
 	public Employee(int id, String name, DateAndTime dateOfBirth, String gender, String email, String password,String position)

@@ -1,8 +1,16 @@
 package businesslogic;
-
+import javax.persistence.*;
+@Entity
+@Table(name="AircraftDescription")
 public class AircraftDescription {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
+	@Column(name="manufacturer")
 	private String manufacturer;
+	@Column(name="model")
 	private String model;
+	@Column(name="seatingCapacity")
 	private int seatingCapacity;
 	
 	public AircraftDescription(String manufacturer, String model, int seatingCapacity)

@@ -1,9 +1,19 @@
 package businesslogic;
+import javax.persistence.*;
 
+@Entity
+@Table(name="Airport")
 public class Airport {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
+	@Column(name="name")
 	private String name;
+	@Column(name="code")
 	private String code;
+	@Column(name="country")
 	private String country;
+	@Column(name="city")
 	private String city;
 	
 	public Airport(String name, String code, String country, String city)

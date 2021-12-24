@@ -1,10 +1,21 @@
 package businesslogic;
+import javax.persistence.*;
 
+@Entity
+@Table(name="Seat")
 public class Seat {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
+	@Column(name="status")
 	private String status;
+	@Column (name="seatNumber")
 	private int seatNumber;
+	@Column(name="seatType")
 	private String seatType;
+	@Column(name="seatLocation")
 	private String seatLocation;
+	@Column(name="priceMultiplier")
 	private int priceMultiplier;
 	
 	public Seat(int seatNumber, String seatType, String seatLocation,int priceMultiplier) {

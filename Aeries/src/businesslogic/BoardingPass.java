@@ -1,9 +1,17 @@
 package businesslogic;
+import javax.persistence.*;
 
+@Entity
+@Table(name="BoardingPass")
 public class BoardingPass {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int number;
+	@OneToOne(cascade = CascadeType.ALL)
 	private Ticket associatedTicket;
+	@OneToOne(cascade = CascadeType.ALL)
 	private Passenger assignedPassenger;
+	@OneToOne(cascade = CascadeType.ALL)
 	private Seat associatedSeat;
 	public BoardingPass(int number, Ticket associatedTicket, Passenger assignedPassenger,Seat associatedSeat)
 	{
