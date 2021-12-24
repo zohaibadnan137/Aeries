@@ -3,18 +3,25 @@ package businesslogic;
 import java.util.ArrayList;
 
 import utilities.DateAndTime;
-
+import javax.persistence.*;
+@Entity
+@Table(name="Ticket")
 public class Ticket {
+	@Id
+	@Column(name="ticketNumber")
 	private int number;
+	@Column(name="amountPaid")
 	private int amountPaid;
+	@OneToOne(cascade = CascadeType.ALL)
 	private DateAndTime date;
+	@OneToMany(cascade = CascadeType.ALL)
 	ArrayList<Passenger> passengers;
 	
-	public Ticket(int number, int amountPaid, DateAndTime date) {
+	public Ticket(int number, int amountPaid, DateAndTime date, ArrayList<Passenger> passengers) {
 		this.number = number;
 		this.amountPaid = amountPaid;
 		this.date = date;
-		passengers = new ArrayList<Passenger>();
+		this.passengers = passengers;
 	}
 	
 	public int getNumber() {

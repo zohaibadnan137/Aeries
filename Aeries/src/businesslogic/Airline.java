@@ -110,7 +110,7 @@ public class Airline {
 	{
 		return flightSchedule.boardPassenger(ticket, passenger, seat, flight);
 	}
-	public boolean verifyBoarding(int boardingNumber)
+	public BoardingPass verifyBoarding(int boardingNumber)
 	{
 		return this.flightSchedule.verifyBoarding(boardingNumber);
 	}

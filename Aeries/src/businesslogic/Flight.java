@@ -2,16 +2,30 @@ package businesslogic;
 
 import java.util.ArrayList;
 
+import javax.persistence.*;
+
 import utilities.DateAndTime;
 
 
+@Entity
+@Table(name="Flight")
 public class Flight {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
+	@OneToOne(cascade = CascadeType.ALL)
 	private FlightPlan plan;
-	private DateAndTime departure; 
+	@OneToOne(cascade = CascadeType.ALL)
+	private DateAndTime departure;
+	@OneToOne(cascade = CascadeType.ALL)
 	private DateAndTime arrival;
+	@Column(name="status")
 	private String status;
+	@OneToMany(cascade = CascadeType.ALL)
 	private ArrayList<Ticket> tickets;
+	@OneToMany(cascade = CascadeType.ALL)
 	private ArrayList<BoardingPass> boardings;
+	@Column(name="price")
 	int price;
 	
 	public Flight(FlightPlan plan,int price)
@@ -82,16 +96,16 @@ public class Flight {
 	public void setBoardings(ArrayList<BoardingPass> boardings) {
 		this.boardings = boardings;
 	}
-	public boolean verifyBoarding(int boardingNumber)
+	public BoardingPass verifyBoarding(int boardingNumber)
 	{
 		for(BoardingPass b: this.boardings)
 		{
 			if(b.getNumber() == boardingNumber)
 			{
-				return true;
+				return b;
 			}
 		}
-		return false;
+		return null;
 	}
 	
 }

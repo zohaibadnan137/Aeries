@@ -1,10 +1,13 @@
 package businesslogic;
 
 import java.util.*;
-
 import utilities.DateAndTime;
+import javax.persistence.*;
 
+@Entity
+@Table(name="FlightSchedule")
 public class FlightSchedule {
+	@OneToMany(cascade = CascadeType.ALL)
 	private ArrayList<Flight> flights;
 	
 	public FlightSchedule()
@@ -53,16 +56,16 @@ public class FlightSchedule {
 		}
 			return searchResults;
 	}
-	public boolean verifyBoarding(int boardingNumber)
+	public BoardingPass verifyBoarding(int boardingNumber)
 	{
 		for(Flight f: this.flights)
 		{
-			if(f.verifyBoarding(boardingNumber))
+			if(f.verifyBoarding(boardingNumber)!=null)
 			{
-				return true;
+				return f.verifyBoarding(boardingNumber);
 			}
 		}
-		return false;
+		return null;
 	}
 	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers,int amountPaid)
 	{
@@ -73,7 +76,7 @@ public class FlightSchedule {
 		}
 		Date d = new Date();
 		DateAndTime currentDate = new DateAndTime(d.getYear(),d.getMonth(),d.getDay(),d.getHours(),d.getMinutes(),d.getSeconds());
-		Ticket newTicket = new Ticket((int) (Math.random() * (1000 - 1)) + 1,amountPaid,currentDate);
+		Ticket newTicket = new Ticket((int) (Math.random() * (1000 - 1)) + 1,amountPaid,currentDate,passengers);
 		flightToBook.addTicket(newTicket);
 		return newTicket;
 		
