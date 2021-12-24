@@ -2,6 +2,8 @@ package testcases;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.junit.Test;
@@ -15,7 +17,7 @@ import utilities.DateAndTime;
 
 public class TestBookFlight {
 	@Test
-	public void Test1()
+	public void Test1() throws FileNotFoundException, IOException
 	{
 		DateAndTime d=new DateAndTime(2000, 07, 07, 8, 0, 0);
 		Passenger p=new Passenger("Huzaifa",d,"Male","E9","567849");
@@ -34,7 +36,7 @@ public class TestBookFlight {
 		assertEquals("Huzaifa",A.getFlightSchedule().getFlight("CY458").getTickets().get(0).getPassengers().get(0).getName());
 	}
 	@Test
-	public void Test2()
+	public void Test2() throws FileNotFoundException, IOException
 	{
 		DateAndTime d1=new DateAndTime(2000, 8, 07, 8, 0, 0);
 		DateAndTime d3=new DateAndTime(2002, 7, 4, 8, 0, 0);
