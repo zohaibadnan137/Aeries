@@ -100,6 +100,7 @@ public class Airline {
 		for(Seat seat : allSeats)
 		{
 			seat.unBookSeat();
+			
 		}
 	}
 	//Get flightPlan with a flightNumber
