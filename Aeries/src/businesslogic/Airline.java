@@ -131,6 +131,10 @@ public class Airline {
 	{
 		this.flightSchedule.cancelTicket(ticketNumber);
 	}
+	public void updateTicket(int ticketNumber, Passenger passenger)
+	{
+		this.flightSchedule.updateTicket(ticketNumber,passenger);
+	}
 	public BoardingPass boardPassenger(Ticket ticket, Passenger passenger, Seat seat,Flight flight)
 	{
 		return flightSchedule.boardPassenger(ticket, passenger, seat, flight);

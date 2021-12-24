@@ -55,6 +55,20 @@ public class FlightSchedule {
 			}
 		}
 	}
+	public void updateTicket(int ticketNumber, Passenger passenger)
+	{
+		for(Flight flight: flights)
+		{
+			ArrayList<Ticket> tickets = flight.getTickets();
+			for(Ticket ticket : tickets)
+			{
+				if(ticket.getNumber()==ticketNumber)
+				{
+					ticket.addPassenger(passenger);
+				}
+			}
+		}
+	}
 	public String getFlightStatus(String flightNumber)
 	{
 		Flight f = this.getFlight(flightNumber);
