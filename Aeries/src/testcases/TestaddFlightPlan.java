@@ -19,6 +19,6 @@ public class TestaddFlightPlan {
 		DateAndTime d2=new DateAndTime(2021, 12, 25, 9, 0, 0);
 		FPC.addFlightPlan("CY458", d1, d2, Sc, Des);
 		Airline A=new Airline("Aeries", null, null, FPC, null, null);
-		assertEquals("CY458",A.getFlightPlanCatalog().getFlightPlans().get(0).getFlightNumber());
+		assertEquals("Lahore",A.getFlightPlan("CY458").getOrigin().getCity());
 	}
 }
