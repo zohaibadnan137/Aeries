@@ -1,0 +1,9 @@
+.text-area {
+	-fx-background-color: transparent;
+}
+
+.text-area .content {
+    -fx-background-color:  #EDF2F4;
+    -fx-border-color:  #8D99AE;
+}
+

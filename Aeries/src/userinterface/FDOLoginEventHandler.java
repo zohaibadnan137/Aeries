@@ -1,16 +1,20 @@
 package userinterface;
 
+import businesslogic.AirlineFactory;
+import businesslogic.Employee;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class FDOLoginEventHandler {
-	
-	private String username;
-	private String password;
 	
     @FXML
     private PasswordField passwordInput;
@@ -29,11 +33,23 @@ public class FDOLoginEventHandler {
 	@FXML
 	private void authenticate(ActionEvent event)
 	{
-		boolean success = false;
-		//success = Airline.authenticate(usernameInput.getText(), passwordInput.getText());
-		if(success)
+		Employee currentEmployee = null;
+		currentEmployee = AirlineFactory.getAirline().authenticateUser(usernameInput.getText(), passwordInput.getText());
+		
+		if(currentEmployee != null)
 		{
-			// Call main menu
+			try 
+			{
+				Parent root = FXMLLoader.load(getClass().getResource("FDOMenu.fxml"));
+				Stage primaryStage = new Stage();
+				primaryStage.setTitle("Front Desk Operations");
+				primaryStage.setScene(new Scene(root));
+				primaryStage.show();
+				((Node)(event.getSource())).getScene().getWindow().hide();
+				
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
 		else
 		{

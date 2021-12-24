@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.MainMenuEventHandler">
+<AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.MainMenuEventHandler">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #D90429;">
          <children>
@@ -26,7 +26,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <GridPane layoutX="25.0" layoutY="130.0" prefHeight="300.0" prefWidth="300.0">
+      <GridPane layoutX="25.0" layoutY="117.0" prefHeight="325.0" prefWidth="300.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -38,29 +38,29 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="SEARCH FOR FLIGHTS" textFill="#8d99ae" GridPane.halignment="CENTER">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="275.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="SEARCH FOR FLIGHTS" textFill="#8d99ae" GridPane.halignment="CENTER">
                <font>
-                  <Font name="Arial Bold" size="14.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#fdoLogin" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="FRONT DESK OPERATIONS" textFill="#8d99ae" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#fdoLogin" prefHeight="50.0" prefWidth="275.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="FRONT DESK OPERATIONS" textFill="#8d99ae" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
-                  <Font name="Arial Bold" size="14.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#adminLogin" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="ADMIN OPERATIONS" textFill="#8d99ae" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#adminLogin" prefHeight="50.0" prefWidth="275.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="ADMIN OPERATIONS" textFill="#8d99ae" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
-                  <Font name="Arial Bold" size="14.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="FILE COMPLAINT" textFill="#8d99ae" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#fileComplaint" prefHeight="50.0" prefWidth="275.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="FILE A COMPLAINT" textFill="#8d99ae" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
-                  <Font name="Arial Bold" size="14.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#exit" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="EXIT" textFill="#8d99ae" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+            <Button mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="275.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="EXIT" textFill="#8d99ae" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <font>
-                  <Font name="Arial Bold" size="14.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
             </Button>
          </children>

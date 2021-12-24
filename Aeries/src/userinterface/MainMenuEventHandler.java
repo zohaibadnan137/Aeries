@@ -50,4 +50,21 @@ public class MainMenuEventHandler {
 			e.printStackTrace();
 		}
 	}
+	
+	@FXML 
+	private void fileComplaint(ActionEvent event)
+	{
+		try 
+		{
+			Parent root = FXMLLoader.load(getClass().getResource("FileComplaint.fxml"));
+			Stage primaryStage = new Stage();
+			primaryStage.setTitle("File a Complaint");
+			primaryStage.setScene(new Scene(root));
+			primaryStage.show();
+			((Node)(event.getSource())).getScene().getWindow().hide();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
