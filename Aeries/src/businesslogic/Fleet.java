@@ -17,6 +17,31 @@ public class Fleet {
 		}
 		this.aircrafts.add(aircraft);
 	}
+	public Aircraft getAircraft(String registrationNumber)
+	{
+		for(Aircraft aircraft: aircrafts)
+		{
+			if(aircraft.getRegistrationNumber().equals(registrationNumber))
+			{
+				return aircraft;
+			}
+		}
+		return null;
+	}
+	public boolean isAircraftAvailable(String registrationNumber)
+	{
+		Aircraft aircraft = this.getAircraft(registrationNumber);
+		if(aircraft!=null)
+		{
+			String status = aircraft.getStatus();
+			if(status.equals("Available"))
+			{
+				return true;
+			}
+			return false;
+		}
+		return false;
+	}
 	public Aircraft addAircraft(int registrationNumber, String status, AircraftDescription description)
 	{
 		Aircraft aircraft = new Aircraft(description, status, status);

@@ -80,11 +80,28 @@ public class Airline {
 		}
 		return flightPlanCatalog.addFlightPlan(flightNumber, plannedDeparture, plannedArrival, origin, destination);
 	}
+	
+//Aircraft Functions
 	public Aircraft addAircraft(int registrationNumber, String status, AircraftDescription description)
 	{
 		return this.fleet.addAircraft(registrationNumber,status,description);
 	}
-	
+	public Aircraft getAircraft(String registrationNumber)
+	{
+		return this.fleet.getAircraft(registrationNumber);
+	}
+	public boolean isAircraftAvailable(String registrationNumber)
+	{
+		return this.fleet.isAircraftAvailable(registrationNumber);
+	}
+	public void unBookAircraft(Aircraft aircraft)
+	{
+		ArrayList<Seat> allSeats = aircraft.getSeats();
+		for(Seat seat : allSeats)
+		{
+			seat.unBookSeat();
+		}
+	}
 	//Get flightPlan with a flightNumber
 	public FlightPlan getFlightPlan(String flightNumber)
 	{
@@ -113,7 +130,6 @@ public class Airline {
 	public BoardingPass verifyBoarding(int boardingNumber)
 	{
 		return this.flightSchedule.verifyBoarding(boardingNumber);
-		
 	}
 	
 }

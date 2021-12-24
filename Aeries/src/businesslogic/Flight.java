@@ -27,8 +27,8 @@ public class Flight {
 	private ArrayList<BoardingPass> boardings;
 	@Column(name="price")
 	int price;
-	
-	public Flight(FlightPlan plan,int price)
+	Aircraft aircraft;
+	public Flight(FlightPlan plan,int price,Aircraft aircraft)
 	{
 		this.plan = plan;
 		this.status = "On Time";
@@ -37,6 +37,7 @@ public class Flight {
 		this.tickets = new ArrayList<Ticket>();
 		this.boardings = null;
 		this.price = price;
+		this.aircraft = aircraft;
 	}
 	public void setDepartureTime(int year, int month, int day, int hour, int minute, int seconds)
 	{
