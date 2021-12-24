@@ -64,7 +64,7 @@ public class FlightSchedule {
 			{
 				if(ticket.getNumber()==ticketNumber)
 				{
-					ticket.addPassenger(passenger);
+					ticket.addPassenger(passenger); 
 				}
 			}
 		}

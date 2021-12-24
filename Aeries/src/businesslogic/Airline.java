@@ -130,7 +130,7 @@ public class Airline {
 	public void cancelTicket(int ticketNumber)
 	{
 		this.flightSchedule.cancelTicket(ticketNumber);
-	}
+	} 
 	public void updateTicket(int ticketNumber, Passenger passenger)
 	{
 		this.flightSchedule.updateTicket(ticketNumber,passenger);
