@@ -28,7 +28,7 @@ public class TestBookFlight {
 		DateAndTime d1=new DateAndTime(2021, 12, 25, 8, 0, 0);
 		DateAndTime d2=new DateAndTime(2021, 12, 25, 9, 0, 0);
 		FPC.addFlightPlan("CY458", d1, d2, Sc, Des);
-		FS.addFlight(FPC.getFlightPlan("CY458"), 15000);
+		FS.addFlight(FPC.getFlightPlan("CY458"), 15000,null);
 		Airline A=new Airline("Aeries", null, null, FPC, FS, null);
 		A.bookTicket(A.getFlightSchedule().getFlight("CY458"), P, 10000);
 		assertEquals("Huzaifa",A.getFlightSchedule().getFlight("CY458").getTickets().get(0).getPassengers().get(0).getName());
@@ -54,7 +54,7 @@ public class TestBookFlight {
 		DateAndTime D1=new DateAndTime(2021, 12, 25, 8, 0, 0);
 		DateAndTime D2=new DateAndTime(2021, 12, 25, 9, 0, 0);
 		FPC.addFlightPlan("CY458", D1, D2, Sc, Des);
-		FS.addFlight(FPC.getFlightPlan("CY458"), 15000);
+		FS.addFlight(FPC.getFlightPlan("CY458"), 15000,null);
 		Airline A=new Airline("Aeries", null, null, FPC, FS, null);
 		A.bookTicket(A.getFlightSchedule().getFlight("CY458"), P, 10000);
 		A.bookTicket(A.getFlightSchedule().getFlight("CY458"), PP, 20000);
