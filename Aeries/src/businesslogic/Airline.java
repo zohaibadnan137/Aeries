@@ -1,6 +1,9 @@
 package businesslogic;
 
 import utilities.DateAndTime;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 public class Airline {
 	private String name;
@@ -56,9 +59,9 @@ public class Airline {
 	{
 		return employeeList.authenticateUser(email, password);
 	}
-	public void fileComplaint(int complaintID, String description, BoardingPass boardingPass)
+	public void fileComplaint(String description, BoardingPass boardingPass) throws FileNotFoundException, IOException
 	{
-		complaintList.addComplaint(complaintID, description, boardingPass);
+		complaintList.addComplaint(description, boardingPass);
 	}
 	public ComplaintList getComplaintList()
 	{
@@ -120,7 +123,7 @@ public class Airline {
 	{
 		return flightSchedule.searchFlight(origin, destination);
 	}
-	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers,int amountPaid)
+	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers,int amountPaid) throws FileNotFoundException, IOException
 	{
 		return flightSchedule.bookTicket(flight, passengers, amountPaid);
 	}

@@ -1,7 +1,11 @@
 package businesslogic;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 import utilities.DateAndTime;
+import utilities.IdDispenser;
+
 import javax.persistence.*;
 
 
@@ -65,7 +69,7 @@ public class FlightSchedule {
 		}
 		return null;
 	}
-	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers,int amountPaid)
+	public Ticket bookTicket(Flight flight,ArrayList<Passenger> passengers,int amountPaid) throws FileNotFoundException, IOException
 	{
 		Flight flightToBook = this.getFlight(flight.getPlan().getFlightNumber());
 		if(flightToBook==null)
@@ -74,7 +78,7 @@ public class FlightSchedule {
 		}
 		Date d = new Date();
 		DateAndTime currentDate = new DateAndTime(d.getYear(),d.getMonth(),d.getDay(),d.getHours(),d.getMinutes(),d.getSeconds());
-		Ticket newTicket = new Ticket((int) (Math.random() * (1000 - 1)) + 1,amountPaid,currentDate,passengers);
+		Ticket newTicket = new Ticket(IdDispenser.getID(),amountPaid,currentDate,passengers);
 		flightToBook.addTicket(newTicket);
 		return newTicket;
 		

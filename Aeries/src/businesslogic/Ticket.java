@@ -16,12 +16,14 @@ public class Ticket {
 	private DateAndTime date;
 	@OneToMany(cascade = CascadeType.ALL)
 	ArrayList<Passenger> passengers;
-	
+	@Column(name="status")
+	String status;
 	public Ticket(int number, int amountPaid, DateAndTime date, ArrayList<Passenger> passengers) {
 		this.number = number;
 		this.amountPaid = amountPaid;
 		this.date = date;
 		this.passengers = passengers;
+		this.status="valid";
 	}
 	
 	public int getNumber() {
@@ -34,7 +36,10 @@ public class Ticket {
 	public int getAmountPaid() {
 		return amountPaid;
 	}
-	
+	public void cancelTicket()
+	{
+		this.status="cancelled";
+	}
 	public void addPassenger(Passenger p)
 	{
 		this.passengers.add(p);

@@ -1,8 +1,10 @@
 package businesslogic;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
-
+import utilities.*;
 public class ComplaintList {
 	private ArrayList<Complaint> complaints;
 	
@@ -10,13 +12,13 @@ public class ComplaintList {
 		complaints = null;
 	}
 
-	public void addComplaint(int complaintID, String description,BoardingPass boardingPass)
+	public void addComplaint(String description,BoardingPass boardingPass) throws FileNotFoundException, IOException
 	{
 		if(this.complaints == null)
 		{
 			this.complaints = new ArrayList<Complaint>();
 		}
-		this.complaints.add(new Complaint(complaintID, description, boardingPass));
+		this.complaints.add(new Complaint(IdDispenser.getID(), description, boardingPass));
 	}
 	public Complaint getComplaint(int ID)
 	{
