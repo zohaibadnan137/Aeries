@@ -21,7 +21,7 @@ public class TestSearchFlight {
 		DateAndTime d1=new DateAndTime(2021, 12, 25, 8, 0, 0);
 		DateAndTime d2=new DateAndTime(2021, 12, 25, 9, 0, 0);
 		FPC.addFlightPlan("CY458", d1, d2, Sc, Des);
-		FS.addFlight(FPC.getFlightPlan("CY458"), 15000);
+		FS.addFlight(FPC.getFlightPlan("CY458"), 15000,null);
 		Airline A=new Airline("Aeries", null, null, FPC, FS, null);
 //		A.addNewFlight(FPC.getFlightPlan("CY458"), 15000);
 		assertEquals("On Time",A.searchFlight(Sc, Des).get(0).getStatus());
@@ -49,13 +49,13 @@ public class TestSearchFlight {
 		FPC.addFlightPlan("CY461", d4, d5, Sc2, Des3);
 		FPC.addFlightPlan("CY457", d3, d4, Sc3, Des2);
 		FPC.addFlightPlan("CY456", d3, d5, Sc4, Des1);
-		FS.addFlight(FPC.getFlightPlan("CY458"), 15000);
+		FS.addFlight(FPC.getFlightPlan("CY458"), 15000,null);
 		Airline A=new Airline("Aeries", null, null, FPC, FS, null);
-		A.addNewFlight(FPC.getFlightPlan("CY459"), 18000);
-		A.addNewFlight(FPC.getFlightPlan("CY457"), 20000);
-		A.addNewFlight(FPC.getFlightPlan("CY456"), 10000);
-		A.addNewFlight(FPC.getFlightPlan("CY460"), 10000);
-		A.addNewFlight(FPC.getFlightPlan("CY461"), 10000);
+		A.addNewFlight(FPC.getFlightPlan("CY459"), 18000,null);
+		A.addNewFlight(FPC.getFlightPlan("CY457"), 20000,null);
+		A.addNewFlight(FPC.getFlightPlan("CY456"), 10000,null);
+		A.addNewFlight(FPC.getFlightPlan("CY460"), 10000,null);
+		A.addNewFlight(FPC.getFlightPlan("CY461"), 10000,null);
 		Flight tobetested = null;
 		for(int i=0;i<A.searchFlight(Sc1, Des4).size();i++)
 		{
