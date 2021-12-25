@@ -24,6 +24,7 @@ public class Seat {
 		this.seatLocation = seatLocation;
 		this.status = "Available";
 		this.priceMultiplier = priceMultiplier;
+		PersistenceFactory.getHandler().save(this);
 	}
 	
 	public String getType() {

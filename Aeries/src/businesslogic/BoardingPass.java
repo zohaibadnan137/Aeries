@@ -19,6 +19,7 @@ public class BoardingPass {
 		this.associatedTicket = associatedTicket;
 		this.assignedPassenger = assignedPassenger;
 		this.associatedSeat = associatedSeat;
+		PersistenceFactory.getHandler().save(this);
 	}
 	public int getNumber() {
 		return number;

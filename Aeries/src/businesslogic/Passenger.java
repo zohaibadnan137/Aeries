@@ -37,6 +37,7 @@ public class Passenger {
 		this.gender = gender;
 		this.address = address;
 		this.passportNumber=passportNumber;
+		PersistenceFactory.getHandler().save(this);
 	}
 	public int getId() {
 		return id;
