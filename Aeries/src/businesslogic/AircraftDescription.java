@@ -18,7 +18,6 @@ public class AircraftDescription {
 		this.manufacturer = manufacturer;
 		this.model = model;
 		this.seatingCapacity = 40;
-		PersistenceFactory.getHandler().save(this);
 	}
 
 	public String getManufacturer() {
