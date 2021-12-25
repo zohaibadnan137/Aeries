@@ -68,4 +68,17 @@ public class Aircraft {
 		}
 		return availableSeats;
 	}
+	public int getNumberOfAvailableSeats()
+	{
+		int numberOfAvailableSeats = 0;
+
+		for(Seat seat : this.seats)
+		{
+			if(seat.getStatus().equals("Available"))
+			{
+				numberOfAvailableSeats++;
+			}
+		}
+		return numberOfAvailableSeats;
+	}
 }

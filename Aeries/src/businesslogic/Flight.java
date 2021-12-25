@@ -47,6 +47,18 @@ public class Flight {
 	{
 		arrival = new DateAndTime(year, month, day, hour, minute, seconds);
 	}
+	public DateAndTime getDepartureTime()
+	{
+		return this.departure;
+	}
+	public DateAndTime getArrivalTime()
+	{
+		return this.arrival;
+	}
+	public int getID()
+	{
+		return this.id;
+	}
 	public String getStatus()
 	{
 		return this.status;
@@ -99,14 +111,21 @@ public class Flight {
 	}
 	public BoardingPass verifyBoarding(int boardingNumber)
 	{
-		for(BoardingPass b: this.boardings)
+		if(this.boardings != null )
 		{
-			if(b.getNumber() == boardingNumber)
+			for(BoardingPass b: this.boardings)
 			{
-				return b;
+				if(b.getNumber() == boardingNumber)
+				{
+					return b;
+				}
 			}
 		}
 		return null;
+	}
+	public Aircraft getAircraft()
+	{
+		return this.aircraft;
 	}
 	
 }

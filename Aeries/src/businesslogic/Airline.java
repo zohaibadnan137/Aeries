@@ -14,7 +14,7 @@ public class Airline {
 	private FlightSchedule flightSchedule;
 	private Fleet fleet;
 
-	public Airline(String name,EmployeeList employeeList,ComplaintList complaintList,FlightPlanCatalog flightPlanCatalog, FlightSchedule flightSchedule,Fleet fleet) {
+	public Airline(String name,EmployeeList employeeList,ComplaintList complaintList,FlightPlanCatalog flightPlanCatalog, FlightSchedule flightSchedule, Fleet fleet) {
 		this.name = name;
 		this.employeeList = employeeList;
 		this.complaintList = complaintList;

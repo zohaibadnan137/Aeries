@@ -38,7 +38,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="275.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="SEARCH FOR FLIGHTS" textFill="#8d99ae" GridPane.halignment="CENTER">
+            <Button mnemonicParsing="false" onAction="#searchFlight" prefHeight="50.0" prefWidth="275.0" style="-fx-background-color: #EDF2F4; -fx-background-radius: 10; -fx-border-color: #8D99AE; -fx-border-radius: 10;" text="SEARCH FOR FLIGHTS" textFill="#8d99ae" GridPane.halignment="CENTER">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>

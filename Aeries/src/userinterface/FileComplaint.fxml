@@ -68,7 +68,7 @@
                   <Font name="Arial" size="18.0" />
                </font>
             </Button>
-            <TextArea fx:id="complaintInput" onMouseClicked="#authenticateBoardingPassNumber" prefHeight="175.0" promptText="Complaint" stylesheets="@FileComplaint.css" wrapText="true" GridPane.rowIndex="5">
+            <TextArea fx:id="complaintInput" onMouseClicked="#authenticateBoardingPassNumber" prefHeight="175.0" promptText="Complaint" stylesheets="@Stylesheets/FileComplaint.css" wrapText="true" GridPane.rowIndex="5">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>

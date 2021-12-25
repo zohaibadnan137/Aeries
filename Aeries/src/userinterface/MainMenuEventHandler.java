@@ -67,4 +67,21 @@ public class MainMenuEventHandler {
 			e.printStackTrace();
 		}
 	}
+	
+	@FXML
+	private void searchFlight(ActionEvent event)
+	{
+		try 
+		{
+			Parent root = FXMLLoader.load(getClass().getResource("SearchFlight.fxml"));
+			Stage primaryStage = new Stage();
+			primaryStage.setTitle("Search for a Flight");
+			primaryStage.setScene(new Scene(root));
+			primaryStage.show();
+			((Node)(event.getSource())).getScene().getWindow().hide();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}	
+	}
 }
