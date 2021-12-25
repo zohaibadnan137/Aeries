@@ -2,6 +2,9 @@ package testcases;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import org.junit.Test;
 
 import businesslogic.Airline;
@@ -13,7 +16,7 @@ import utilities.DateAndTime;
 
 public class TestSearchFlight {
 	@Test
-	public void Test1() {
+	public void Test1() throws FileNotFoundException, IOException {
 		FlightSchedule FS=new FlightSchedule();
 		FlightPlanCatalog FPC=new FlightPlanCatalog();
 		Airport Sc=new Airport("Lahore Internatioal", "LHR", "Pakistan", "Lahore");
@@ -27,7 +30,7 @@ public class TestSearchFlight {
 		assertEquals("On Time",A.searchFlight(Sc, Des).get(0).getStatus());
 	}
 	@Test
-	public void Test2() {
+	public void Test2() throws FileNotFoundException, IOException {
 		FlightPlanCatalog FPC=new FlightPlanCatalog();
 		FlightSchedule FS=new FlightSchedule();
 		Airport Sc1=new Airport("Lahore Internatioal", "LHR", "Pakistan", "Lahore");

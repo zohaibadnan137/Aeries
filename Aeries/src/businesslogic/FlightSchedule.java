@@ -16,7 +16,7 @@ public class FlightSchedule {
 	{
 		flights = null;
 	}
-	public Flight addFlight(FlightPlan plan,int price,Aircraft aircraft)
+	public Flight addFlight(FlightPlan plan,int price,Aircraft aircraft) throws FileNotFoundException, IOException
 	{
 		if(flights == null)
 		{
