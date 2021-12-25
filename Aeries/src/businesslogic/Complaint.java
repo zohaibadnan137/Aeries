@@ -4,6 +4,8 @@ import javax.persistence.*;
 @Table(name="Complaint")
 public class Complaint {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
 	@Column(name="complaintID")
 	private int complaintID;
 	@Column(name="Description")

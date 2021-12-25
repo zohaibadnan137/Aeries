@@ -1,6 +1,8 @@
 package businesslogic;
 
 import java.util.ArrayList;
+
+import javax.annotation.processing.Generated;
 import javax.persistence.*;
 
 //This is Aircraft Class
@@ -10,6 +12,8 @@ public class Aircraft {
 	@OneToOne(cascade = CascadeType.ALL)
 	private AircraftDescription aircraftDescription;
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
 	@Column(name="registrationNumber")
 	private String registrationNumber;
 	@Column(name="status")
