@@ -21,6 +21,7 @@ public class Airline {
 		this.flightPlanCatalog = flightPlanCatalog;
 		this.flightSchedule = flightSchedule;
 		this.fleet = fleet;
+		PersistenceFactory.getHandler().save(this);
 	}
 
 	public String getName() {

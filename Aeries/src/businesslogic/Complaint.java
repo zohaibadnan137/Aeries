@@ -4,6 +4,8 @@ import javax.persistence.*;
 @Table(name="Complaint")
 public class Complaint {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
 	@Column(name="complaintID")
 	private int complaintID;
 	@Column(name="Description")
@@ -15,6 +17,7 @@ public class Complaint {
 		this.complaintID = complaintID;
 		this.description = description;
 		this.boardingPass = boardingPass;
+		PersistenceFactory.getHandler().save(this);
 	}
 	public int getComplaintID()
 	{
