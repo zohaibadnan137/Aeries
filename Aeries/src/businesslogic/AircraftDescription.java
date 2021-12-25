@@ -13,12 +13,11 @@ public class AircraftDescription {
 	@Column(name="seatingCapacity")
 	private int seatingCapacity;
 	
-	public AircraftDescription(String manufacturer, String model, int seatingCapacity)
-	{
+	public AircraftDescription(String manufacturer, String model)
+	{ 
 		this.manufacturer = manufacturer;
 		this.model = model;
-		this.seatingCapacity = seatingCapacity;
-		PersistenceFactory.getHandler().save(this);
+		this.seatingCapacity = 40;
 	}
 
 	public String getManufacturer() {

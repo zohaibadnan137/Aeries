@@ -8,6 +8,6 @@ public class PersistenceFactory {
 		{
 			persistenceHandler= new DBHandler();
 		}
-		return persistenceHandler;
+		return new DBHandler();
 	}
 }

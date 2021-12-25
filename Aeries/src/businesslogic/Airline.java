@@ -89,6 +89,10 @@ public class Airline {
 //Aircraft Functions
 	public Aircraft addAircraft(int registrationNumber, String status, AircraftDescription description)
 	{
+		if(this.fleet==null)
+		{
+			this.fleet = new Fleet();
+		}
 		return this.fleet.addAircraft(registrationNumber,status,description);
 	}
 	public Aircraft getAircraft(String registrationNumber)
@@ -111,6 +115,10 @@ public class Airline {
 	}
 	public Flight addNewFlight(FlightPlan flightPlan,int price, Aircraft aircraft)
 	{
+		if(this.flightSchedule==null)
+		{
+			this.flightSchedule = new FlightSchedule();
+		}
 		return flightSchedule.addFlight(flightPlan, price, aircraft);
 	}
 	public String checkFlightStatus(String flightNumber)

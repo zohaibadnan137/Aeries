@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import utilities.*;
 public class ComplaintList {
 	private ArrayList<Complaint> complaints;
-	
+
 	public ComplaintList() {
 		complaints = null;
 	}
