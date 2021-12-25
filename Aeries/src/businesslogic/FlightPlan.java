@@ -26,6 +26,7 @@ public class FlightPlan {
 		this.plannedArrival = plannedArrival;
 		this.origin = origin;
 		this.destination = destination;
+		PersistenceFactory.getHandler().save(this);
 	}
 	public DateAndTime getPlannedDepartureTime() {
 		return plannedDeparture;

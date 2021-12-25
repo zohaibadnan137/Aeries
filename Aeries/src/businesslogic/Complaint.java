@@ -15,6 +15,7 @@ public class Complaint {
 		this.complaintID = complaintID;
 		this.description = description;
 		this.boardingPass = boardingPass;
+		PersistenceFactory.getHandler().save(this);
 	}
 	public int getComplaintID()
 	{

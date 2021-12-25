@@ -22,6 +22,7 @@ public class Aircraft {
 		this.aircraftDescription = aircraftDescription;
 		this.registrationNumber = registrationNumber;
 		this.status = status;
+		PersistenceFactory.getHandler().save(this);
 	}
 	public AircraftDescription getAircraftDescription() {
 		return aircraftDescription;

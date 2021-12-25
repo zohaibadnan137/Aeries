@@ -30,6 +30,7 @@ public class Employee {
 		this.email = email;
 		this.position=position;
 		this.password = password;
+		PersistenceFactory.getHandler().save(this);
 	}
 	public boolean authenticateUser(String email, String password)
 	{

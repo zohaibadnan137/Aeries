@@ -37,6 +37,7 @@ public class Flight {
 		this.boardings = null;
 		this.price = price;
 		this.aircraft = aircraft;
+		PersistenceFactory.getHandler().save(this);
 	}
 	public void setDepartureTime(int year, int month, int day, int hour, int minute, int seconds)
 	{

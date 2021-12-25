@@ -23,6 +23,7 @@ public class Ticket {
 		this.date = date;
 		this.passengers = passengers;
 		this.status="valid";
+		PersistenceFactory.getHandler().save(this);
 	}
 	
 	public int getNumber() {
