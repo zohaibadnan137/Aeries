@@ -113,7 +113,7 @@ public class Airline {
 	{
 		return this.flightPlanCatalog.getFlightPlan(flightNumber);
 	}
-	public Flight addNewFlight(FlightPlan flightPlan,int price, Aircraft aircraft)
+	public Flight addNewFlight(FlightPlan flightPlan,int price, Aircraft aircraft) throws FileNotFoundException, IOException
 	{
 		if(this.flightSchedule==null)
 		{
