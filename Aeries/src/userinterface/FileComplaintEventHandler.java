@@ -1,6 +1,8 @@
 package userinterface;
 
-import businesslogic.Airline;
+import java.io.IOException;
+
+import Exceptions.InvalidBoardingPassException;
 import businesslogic.AirlineFactory;
 import businesslogic.BoardingPass;
 import javafx.event.ActionEvent;
@@ -17,7 +19,6 @@ import javafx.stage.Stage;
 
 public class FileComplaintEventHandler {
 	
-	Airline currentAirline = AirlineFactory.getAirline();
 	BoardingPass currentBoardingPass;
 	boolean invalid;
 	
@@ -38,25 +39,24 @@ public class FileComplaintEventHandler {
     }
     
     @FXML
-    private void authenticateBoardingPassNumber(MouseEvent event)
+    private void authenticateBoardingPassNumber(MouseEvent event) throws InvalidBoardingPassException
     {
-    	String boardingPassNumber = boardingPassNumberInput.getText();
-    	currentBoardingPass = currentAirline.verifyBoarding(Integer.parseInt(boardingPassNumber));
+    	currentBoardingPass = AirlineFactory.getAirline().verifyBoarding(Integer.parseInt(boardingPassNumberInput.getText()));
     	if(currentBoardingPass == null)
     	{
-    		//invalid = true;
+    		invalid = true;
     		invalidBoardingPassNumber.setText("Invalid boarding pass number. Please try again.");
+    		throw new InvalidBoardingPassException("Invalid boarding pass number.");
     	}
     }
     
     @FXML
-	private void submit(ActionEvent event)
+	private void submit(ActionEvent event) throws IOException
 	{
-    	if(invalid == false)
+    	if(invalid == false && complaintInput.getText() != "")
     	{
-    		String complaint = complaintInput.getText();
-    		//currentAirline.fileComplaint(0, complaint, currentBoardingPass);
-    		// Load complaint successfully filed page 
+    		AirlineFactory.getAirline().fileComplaint(complaintInput.getText(), currentBoardingPass);
+    		    	
 			try 
 			{
 				Parent root = FXMLLoader.load(getClass().getResource("FileComplaintSucess.fxml"));

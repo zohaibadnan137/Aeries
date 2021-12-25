@@ -6,11 +6,11 @@ import org.hibernate.cfg.Configuration;
 
 import utilities.*;
 
-public class Main {
+public class Test {
 
 	public static void main(String[] args) throws ClassNotFoundException {
 		FlightPlanCatalog flightPlanCatalog =new FlightPlanCatalog();
-		Airport Sc = new Airport("Lahore Internatioal", "LHR", "Pakistan", "Lahore");
+		Airport Sc = new Airport("Lahore International", "LHR", "Pakistan", "Lahore");
 		Airport Des = new Airport("Multan International", "MUX", "Pakistan", "Multan");
 		DateAndTime d1 = new DateAndTime(2021, 12, 25, 8, 0, 0);
 		DateAndTime d2 = new DateAndTime(2021, 12, 25, 9, 0, 0);

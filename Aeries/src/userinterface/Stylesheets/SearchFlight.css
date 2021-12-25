@@ -1,0 +1,34 @@
+.scroll-pane {
+	-fx-background-color: transparent;
+	
+}
+
+.scroll-bar:vertical{
+    -fx-background-color: #FFF;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #EDF2F4;
+}
+
+.table-view .column-header {
+    -fx-background-color:  #EDF2F4;
+    -fx-border-width: 5;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #EDF2F4;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #FFF;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color,  #EDF2F4;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: -fx-table-cell-border-color, #8D99AE;
+    -fx-table-cell-border-color: transparent;
+}
