@@ -1,10 +1,13 @@
 package businesslogic;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.persistence.*;
 
 import utilities.DateAndTime;
+import utilities.IdDispenser;
 
 
 @Entity
@@ -27,7 +30,7 @@ public class Flight {
 	int price;
 	@OneToOne(cascade = CascadeType.ALL)
 	Aircraft aircraft;
-	public Flight(FlightPlan plan,int price,Aircraft aircraft)
+	public Flight(FlightPlan plan,int price,Aircraft aircraft) throws FileNotFoundException, IOException
 	{
 		this.plan = plan;
 		this.status = "On Time";
@@ -37,6 +40,8 @@ public class Flight {
 		this.boardings = null;
 		this.price = price;
 		this.aircraft = aircraft;
+		this.id = IdDispenser.getID();
+
 		PersistenceFactory.getHandler().save(this);
 	}
 	public void setDepartureTime(int year, int month, int day, int hour, int minute, int seconds)
