@@ -13,7 +13,6 @@ public class Aircraft {
 	private AircraftDescription aircraftDescription;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int id;
 	@Column(name="registrationNumber")
 	private String registrationNumber;
 	@Column(name="status")
