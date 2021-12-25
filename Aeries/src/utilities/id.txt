@@ -1,9 +1,1 @@
-<<<<<<< HEAD
-78
-=======
-<<<<<<< HEAD
-55
-=======
-40
->>>>>>> branch 'master' of git@github.com:zohaibadnan137/Aeries.git
->>>>>>> branch 'master' of git@github.com:zohaibadnan137/Aeries.git
+73

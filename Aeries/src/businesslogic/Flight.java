@@ -40,12 +40,9 @@ public class Flight {
 		this.boardings = null;
 		this.price = price;
 		this.aircraft = aircraft;
-<<<<<<< HEAD
-		
 		this.id = IdDispenser.getID();
-=======
+
 		PersistenceFactory.getHandler().save(this);
->>>>>>> branch 'master' of git@github.com:zohaibadnan137/Aeries.git
 	}
 	public void setDepartureTime(int year, int month, int day, int hour, int minute, int seconds)
 	{

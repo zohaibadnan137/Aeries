@@ -74,9 +74,9 @@ public class Main extends Application {
 			DateAndTime dob = new DateAndTime(2000, 12, 10, 0, 0, 0);
 			
 			// Create employees
-			airline.getEmployeeList().addEmployee(1, "Asim Ali", dob, "Male", "asim@gmail.com", "asimaeries" ,"FDO");
+			airline.getEmployeeList().addEmployee(1, "Asim Ali", dob, "Male", "asim@gmail.com", "1234" ,"FDO");
 			airline.getEmployeeList().addEmployee(2, "Muhammad Huzaifa", dob, "Male", "huzaifa@gmail.com", "1234", "Admin");
-			airline.getEmployeeList().addEmployee(3, "Zohaib Adnan", dob, "Male", "zohaib@gmail.com", "zohaibaeries", "FDO");
+			airline.getEmployeeList().addEmployee(3, "Zohaib Adnan", dob, "Male", "zohaib@gmail.com", "1234", "FDO");
 			
 			Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
 			primaryStage.setTitle("Aeries");
